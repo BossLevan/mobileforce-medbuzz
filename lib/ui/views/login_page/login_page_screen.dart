@@ -1,3 +1,4 @@
+import 'package:MedBuzz/ui/views/add_medication/add_medication_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:MedBuzz/ui/size_config/config.dart';
@@ -141,6 +142,12 @@ class _LoginPageState extends State<LoginPage> {
                       top: Config.yMargin(context, 2.3),
                     ),
                     child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddMedicationScreen()));
+                      },
                       child: Text(
                         'Forgot Password?',
                         style: TextStyle(

@@ -1,9 +1,9 @@
 import 'package:MedBuzz/ui/size_config/config.dart';
+import 'package:MedBuzz/ui/views/add_medication/add_medication_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'all_medications_reminder_model.dart';
-
 
 class MedicationScreen extends StatefulWidget {
   @override
@@ -51,7 +51,12 @@ class _MedicationScreenState extends State<MedicationScreen> {
                 backgroundColor: Theme.of(context).buttonColor,
                 splashColor: Theme.of(context).buttonColor.withOpacity(.9),
                 //Navigate to fitness reminder creation screen
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddMedicationScreen()));
+                }),
           ),
         ),
       ),
@@ -207,7 +212,12 @@ class FitnessCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("8:00 AM", style: TextStyle(fontWeight: FontWeight.bold, fontSize: Config.textSize(context, 6)),),
+              Text(
+                "8:00 AM",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: Config.textSize(context, 6)),
+              ),
               Divider(
                   thickness: 0.7,
                   color: Theme.of(context).primaryColorDark.withOpacity(.4),
@@ -219,25 +229,40 @@ class FitnessCard extends StatelessWidget {
                 width: width,
                 height: height * .22,
                 decoration: BoxDecoration(
-                  color:Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius:
                       BorderRadius.circular(Config.xMargin(context, 8)),
                 ),
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 5.0, right: 10, left: 20),
+                      padding:
+                          const EdgeInsets.only(top: 5.0, right: 10, left: 20),
                       child: Row(
-                        
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          Image.asset("images/syringe.png", color:Theme.of(context).primaryColorLight, width: 40, height: 40,),
+                          Image.asset(
+                            "images/syringe.png",
+                            color: Theme.of(context).primaryColorLight,
+                            width: 40,
+                            height: 40,
+                          ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              Text("Chloroquine Injection", style: TextStyle(fontSize: 16.0, color: Theme.of(context).primaryColorLight, fontWeight: FontWeight.bold),),
-                              Text("1 shots once daily", style:TextStyle( color: Theme.of(context).primaryColorLight),),
+                              Text(
+                                "Chloroquine Injection",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Theme.of(context).primaryColorLight,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "1 shots once daily",
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColorLight),
+                              ),
                             ],
                           ),
                         ],
@@ -245,7 +270,7 @@ class FitnessCard extends StatelessWidget {
                     ),
                     Positioned(
                       child: Divider(
-                        height: 200,
+                          height: 200,
                           thickness: 1,
                           color: Theme.of(context).primaryColorLight,
                           indent: Config.xMargin(context, 2.5),
@@ -259,7 +284,14 @@ class FitnessCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          FlatButton(onPressed: null, child: Text("View", style:TextStyle( color: Theme.of(context).primaryColorLight, fontWeight: FontWeight.bold),)),
+                          FlatButton(
+                              onPressed: null,
+                              child: Text(
+                                "View",
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColorLight,
+                                    fontWeight: FontWeight.bold),
+                              )),
                           FlatButton.icon(
                               onPressed: () {},
                               icon: Icon(
@@ -267,7 +299,9 @@ class FitnessCard extends StatelessWidget {
                                 color: Theme.of(context).primaryColorLight,
                               ),
                               label: Text("Skip",
-                                  style: TextStyle(color: Theme.of(context).primaryColorLight))),
+                                  style: TextStyle(
+                                      color: Theme.of(context)
+                                          .primaryColorLight))),
                           FlatButton.icon(
                               onPressed: () {},
                               icon: Icon(
@@ -275,14 +309,15 @@ class FitnessCard extends StatelessWidget {
                                 color: Theme.of(context).primaryColorLight,
                               ),
                               label: Text("Done",
-                                  style: TextStyle(color: Theme.of(context).primaryColorLight)))
+                                  style: TextStyle(
+                                      color:
+                                          Theme.of(context).primaryColorLight)))
                         ],
                       ),
                     )
                   ],
                 ),
               ),
-              
             ]),
       ),
     );
