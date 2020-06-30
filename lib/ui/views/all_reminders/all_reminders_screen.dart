@@ -1,7 +1,7 @@
-import 'package:MedBuzz/core/widgets/medication_card.dart';
-import 'package:MedBuzz/core/widgets/water_card.dart';
 import 'package:MedBuzz/ui/size_config/config.dart';
 import 'package:MedBuzz/ui/views/all_reminders/all_reminders_view_model.dart';
+import 'package:MedBuzz/ui/widget/medication_card.dart';
+import 'package:MedBuzz/ui/widget/water_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -41,7 +41,7 @@ class AllRemindersScreen extends StatelessWidget {
               height: height * 0.03,
               child: ScrollablePositionedList.builder(
                 //sets default selected day to the index of Date.now() date
-                initialScrollIndex: allReminders.selectedMonth - 1,
+                initialScrollIndex: allReminders.selectedDay - 1,
                 itemScrollController: _monthScrollController,
                 //dynamically sets the itemCount to the number of days in the currently selected month
                 itemCount: monthValues.length,
@@ -200,7 +200,7 @@ class AllRemindersScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: height * 0.02),
-                  MedicationCard(height: height, width: width),
+                  MedicationCard(height: height, width: width)
                 ],
               ),
             ),

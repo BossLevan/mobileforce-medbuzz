@@ -1,4 +1,3 @@
-import 'package:MedBuzz/core/models/water_reminder.dart';
 import 'package:MedBuzz/ui/size_config/config.dart';
 import 'package:date_util/date_util.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +67,7 @@ class AllRemindersViewModel extends ChangeNotifier {
 
   TextStyle calendarMonthTextStyle(BuildContext context, index) {
     return TextStyle(
-      color: _selectedMonth - 1 == index
+      color: _selectedMonth == index
           ? Theme.of(context).primaryColor
           : Theme.of(context).primaryColorDark,
       fontSize: Config.textSize(context, 4),
@@ -89,7 +88,7 @@ class AllRemindersViewModel extends ChangeNotifier {
 
   void updateSelectedMonth(String val) {
     _selectedMonth =
-        monthValues.indexWhere((element) => element.month == val) + 1;
+        monthValues.indexWhere((element) => element.month == val) ;
     notifyListeners();
   }
 

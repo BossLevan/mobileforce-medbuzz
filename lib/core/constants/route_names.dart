@@ -12,6 +12,7 @@ import 'package:MedBuzz/ui/views/profile_page.dart';
 import 'package:MedBuzz/ui/views/schedule-appointment/all_scheduled_appointment_reminders.dart';
 import 'package:MedBuzz/ui/views/schedule-appointment/schedule_appointment_reminder_screen.dart';
 import 'package:MedBuzz/ui/views/signup_page/signup_screen.dart';
+import 'package:MedBuzz/ui/views/single_diet_screen/single_diet_screen.dart';
 import 'package:MedBuzz/ui/views/snooze_reminder/confirmation_or_snooze.dart';
 import 'package:MedBuzz/ui/views/splash_screen.dart';
 import 'package:MedBuzz/ui/views/water_reminders/schedule_water_reminder_screen.dart';
@@ -26,7 +27,6 @@ class RouteNames {
   //Confusing naming 'home' actually is for a screen about Playstore ratings
   static const String home = 'home';
   static const String login = 'login';
-  static const String forgotPassword = 'forgotPassword';
   static const String forgotPasswordSubmit = 'forgotPasswordSubmit';
   static const String profile = 'profile';
   static const String onboarding = 'onboarding';
@@ -42,6 +42,8 @@ class RouteNames {
       'confirmOrSnoozeReminderScreen';
   static const String forgotPasswordReset = 'forgotPasswordReset';
   static const String forgotPasswordMail = 'forgotPasswordMail';
+  static const String singleDietScreen = 'singleDietScreen';
+
 
 //Brought routes here to  clean things up in the main.dart file
   static Map<String, Widget Function(BuildContext)> routes = {
@@ -67,5 +69,6 @@ class RouteNames {
         ConfirmOrSnoozeScreen(),
     RouteNames.forgotPasswordReset: (context) => ForgotPasswordReset(),
     RouteNames.forgotPasswordMail: (context) => ForgotPasswordMail(),
+    RouteNames.singleDietScreen: (context) => SingleDiet(),
   };
 }
