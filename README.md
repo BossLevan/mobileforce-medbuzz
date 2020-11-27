@@ -1,5 +1,7 @@
 # MedBuzz
 
+Google Playstore Link: https://play.google.com/store/apps/details?id=com.incredible.medbuzz 
+
 This is an app for people to set up reminders for their medications, diet, fitness, appointments and drinkage of water. The user can keep track of any appointment they don’t want to forget, be reminded to take their drugs which i am sure people forget to take, keep track of the food they eat (carbohydrate, protein, etc), be reminded to take regular exercise to keep fit and of course most important of all take lots of water.
 
 App Story:
